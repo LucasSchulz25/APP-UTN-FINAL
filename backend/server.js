@@ -2,12 +2,16 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+const cors = require('cors');
+app.use(cors());
+
+
 dotenv.config(); // ✅ Esto carga el .env
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ⚠️ Acá es donde fallaba porque process.env.MONGODB_URI estaba vacío
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log('🟢 Conectado a MongoDB'))
