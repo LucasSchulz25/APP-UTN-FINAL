@@ -7,5 +7,5 @@ const productoSchema = new mongoose.Schema({
   categoria: String
 }, { timestamps: true });
 
-export default mongoose.model('Producto', productoSchema);
+export default mongoose.model('Producto', productoSchema, 'products');
 
